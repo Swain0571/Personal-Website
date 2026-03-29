@@ -30,10 +30,23 @@
         <p>欢迎访问我的个人网站<br>你可以随时与下方 AI 智能体对话交流</p>
     </div>
 
-    <!-- 这里换成你自己 Coze 发布的 iframe 嵌入地址 -->
-    <iframe 
-        src="你的Coze公开链接地址"
-        style="position:fixed;right:20px;bottom:20px;width:380px;height:600px;border:none;border-radius:12px;box-shadow:0 4px 30px #0003;"
-    ></iframe>
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+    <script>
+      new CozeWebSDK.WebChatClient({
+        config: {
+          bot_id: '7523260629134917668',
+        },
+        componentProps: {
+          title: 'Coze',
+        },
+        auth: {
+          type: 'token',
+          token: 'pat_8Y4sWAWPjVlwOOmy1bWTw7brDvkF004KHYkEYYYzs0p8gZGC6l2fIf19I4zHo8SM',
+          onRefreshToken: function () {
+            return 'pat_8Y4sWAWPjVlwOOmy1bWTw7brDvkF004KHYkEYYYzs0p8gZGC6l2fIf19I4zHo8SM'
+          }
+        }
+      });
+    </script>
 </body>
 </html>
